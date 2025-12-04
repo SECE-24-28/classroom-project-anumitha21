@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 3fr;   
+      grid-template-rows: auto 1fr;     
+      grid-template-areas: 
+        "head head"
+        "navbar mainContent";
+    }
+
+    header {
+      grid-area: head;
+      background-color: royalblue;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 30px;
+      text-align: center;
+    }
+
+    nav {
+      grid-area: navbar;
+      background-color: black;
+      color: white;
+      font-size: large;
+      border: 1px solid;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    main {
+      grid-area: mainContent;
+      background-color: lightsteelblue; 
+      border: 1px solid;
+      padding: 10px;
+    }
+
+
+    .topRow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .bottomGrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 100px);
+      gap: 10px;
+    }
+
+    .item {
+        border-radius: 10px;
+      background-color: white; 
+      border: 2px solid  white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>DashBoard Layout</header>
+
+  <nav>
+    <div>Dashboard</div>
+    <div>Address</div>
+    <div>Reports</div>
+    <div>Settings</div>
+  </nav>
+
+  <main>
+
+    <div class="topRow">
+      <div class="item">User : 1200</div>
+      <div class="item">Sales : 95000</div>
+      <div class="item">Visitors :1000 </div>
+      <div class="item">Bounce rate :13.9%</div>
+    </div>
+
+    <!-- 3 boxes × 2 rows -->
+    <div class="bottomGrid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+  </main>
+</body>
+</html>
